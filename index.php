@@ -125,7 +125,7 @@ header, section {
 
     <div class="contact container">
         <h2>Kontakt</h2>
-        <form action="process_form.php" method="post">
+        <form action="process_form.php" method="get">
             <label for="name">Name:</label>
             <input type="text" id="name" name="name" required>
             <br>
@@ -135,7 +135,7 @@ header, section {
             <label for="message">Nachricht:</label>
             <textarea id="message" name="message" required></textarea>
             <br>
-            <input type="submit" value="Senden">
+            <input type="submit" name="formSubmit" value="Senden">
         </form>
     </div>
 
