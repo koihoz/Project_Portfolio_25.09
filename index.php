@@ -135,7 +135,7 @@ header, section {
             <label for="message">Nachricht:</label>
             <textarea id="message" name="message" required></textarea>
             <br>
-            <input type="submit" value="Senden">
+            <input type="submit" name="formSubmit" value="Senden">
         </form>
     </div>
 
