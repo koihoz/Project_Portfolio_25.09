@@ -28,35 +28,6 @@ header, section {
     border-radius: 5px;
 }
 
-.legal-content h2 {
-    color: #444;
-    border-bottom: 1px solid #ddd;
-    padding-bottom: 10px;
-    margin-top: 0;
-}
-
-.legal-content p {
-    color: #555;
-    line-height: 1.6;
-    margin-bottom: 20px;
-}
-
-.legal-content_info {
-    display: flex;
-    margin-bottom: 30px;
-}
-
-.title {
-    flex: 2; 
-    padding-right: 20px; 
-}
-
-span {
-    flex: 1;
-}
-
-
-
 .contact h2 {
     color: #444;
     border-bottom: 1px solid #ddd;
@@ -111,6 +82,8 @@ span {
     margin: 10px;
 }
 
+
+
     </style>
 </head>
 <body>
@@ -128,6 +101,7 @@ span {
                 <li><a class="nav-link" href="seiten/blog.html">Blog</a></li>
                 <li><a class="nav-link" href="seiten/projekte.html">Projekte</a></li>
                 <li><a class="nav-link" href="seiten/kontakt.html">Kontakt</a></li>
+                <li><a class="nav-link" href="impressum.php">Impressum</a></li>
             </ul>
         </div>
     </div>
@@ -148,40 +122,6 @@ span {
         <p>Beschreibung eurer Dienstleistungen oder Produkte...</p>
     </section>
 
-    
-        <div class="legal-content container">
-            <h2>Impressum</h2>
-            <div class="legal-content_info">
-                <b class="title">Herausgeber:</b>
-                <span>Firma GFN GmbH <br> Maaßstraße 24<br> 69123 Heidelberg<br> E-Mail: info@example.com <br> Telefon: <a href="tel:+49 6221 8322-0">+49 6221 8322-0</a> <br>
-                    Telefax: +49 6221 8322-88 </span>
-                    
-            </div>
-            
-            <div class="legal-content_info">
-                <b class="title">Geschäftsführung:</b>
-                <span>Nils Manegold, Thomas Surwald</span>
-            </div>
-            
-            <div class="legal-content_info">
-                <b class="title">Handelsregister:</b>
-                <span>HRB Nr. 737735, Amtsgericht Mannheim</span>
-            </div>
-
-            <div class="legal-content_info">
-                <b class="title">Umsatzsteuer-ID gemäß § 27a UStG:</b>
-                <span>DE 194025679</span>
-            </div>
-
-            <div class="legal-content_info">
-                <b class="title">Datenschutz-beauftragter:</b>
-                <span>Amadeus FiRe AG Datenschutzbeauftragter <br>
-                    Hanauer Landstraße 160 <br>
-                    60314 Frankfurt am Main</span>
-            </div>
-            
-            
-        </div>
 
     <div class="contact container">
         <h2>Kontakt</h2>
