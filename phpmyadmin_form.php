@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio Webseite</title>
+    <title>PhpmyAdmin Form</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
     <style>
 body {
@@ -76,17 +76,36 @@ header, section {
     background-color: #0056b3;
 }
 
-.gallery img {
-    width: 100%;
-    max-width: 300px;
-    margin: 10px;
-}
-
 
 
     </style>
 </head>
 <body>
+
+
+<?php
+$host = 'localhost';
+$db   = 'portfolio-db'; // Имя вашей базы данных
+$user = 'root';      // Имя пользователя для доступа к базе данных
+$pass = '';      // Пароль для доступа к базе данных
+$charset = 'utf8mb4';
+
+$pdo = new PDO("mysql:host=$host;dbname=$db;charset=$charset", $user, $pass);
+
+if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['formSubmit'])) {
+    $name = $_POST['name'];
+    $email = $_POST['email'];
+    $message = $_POST['message'];
+
+    $stmt = $pdo->prepare("INSERT INTO contacts (name, email, message) VALUES (:name, :email, :message)");
+    $stmt->execute(['name' => $name, 'email' => $email, 'message' => $message]);
+
+    header("Location: success.php");
+    exit;
+}
+?>
+
+
 
     <!-- Navigationsmenü -->
 
@@ -102,31 +121,15 @@ header, section {
                 <li><a class="nav-link" href="seiten/projekte.html">Projekte</a></li>
                 <li><a class="nav-link" href="seiten/kontakt.html">Kontakt</a></li>
                 <li><a class="nav-link" href="impressum.php">Impressum</a></li>
-                <li><a class="nav-link" href="phpmyadmin_form.php">phpMyAdmin</a></li>
             </ul>
         </div>
     </div>
 </nav>
 
-    <header>
-        <h1>Willkommen</h1>
-        <p>Hier ist eine kurze Einführung...</p>
-    </header>
-
-    <section id="about">
-        <h2>Wer sind wir</h2>
-        <p>Kurzer Text über euch...</p>
-    </section>
-
-    <section id="services">
-        <h2>Was machen wir</h2>
-        <p>Beschreibung eurer Dienstleistungen oder Produkte...</p>
-    </section>
-
 
     <div class="contact container">
         <h2>Kontakt</h2>
-        <form action="process_form.php" method="post">
+        <form action="" method="post">
             <label for="name">Name:</label>
             <input type="text" id="name" name="name" required>
             <br>
@@ -140,14 +143,6 @@ header, section {
         </form>
     </div>
 
-    <section id="gallery">
-        <h2>Galerie</h2>
-        <div class="gallery">
-            <img src="/img/GFN_Raum.jpg" alt="Bild 1">
-            <img src="/img/GFN_Raum_2.jpg" alt="Bild 2">
-            
-        </div>
-    </section>
 
 </body>
 </html>
